@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        // https://jscomplete.com/repl
+        // If you don't need state, use function components, props don't change
+
+        const Button = function (props) {
+	        return (
+  	        <button>{props.label}</button>
+            //React.createElement("button", null, props.label)
+          );
+        };
+
+        ReactDOM.render(<Button label="Do One" />, mountNode);
+
+        const ButtonTwo = (props) => {
+	        return (
+  	        <button>{props.label}</button>
+            //React.createElement("button", null, props.label)
+          );
+        };
+
+        ReactDOM.render(<ButtonTwo label="Do Two" />, mountNode);
+
+    </script>
+
+    <script>
+
+        // If you need state, use class components
+
+        class Button extends React.Component {
+            //state = { counter: 0 };
+
+            constructor(props) {
+                super(props);
+                this.state = { counter: 0 };
+            }
+
+            handleClick = () => {
+                // this === component instance
+
+                //this.setState({
+                //    counter: this.state.counter + 1
+                //});
+
+                //this.setState((prevState) => {
+                //    return {
+                //        counter: prevState.counter + 1
+                //    };
+                //});
+
+                // This overload of setState is better since we need current counter value to update new value
+                // Rule of them is whenever you need to update the state using values from the current state, 
+                // you should use the overload of setState (function parameter instead of object) to avoid race conditions
+                this.setState((prevState) => ({
+                    counter: prevState.counter + 1
+                }));
+            };
+
+            render() {
+                return (
+                    <button onClick={this.handleClick}>
+                        {this.state.counter}
+                    </button>
+                );
+            }
+        }
+
+        ReactDOM.render(<Button />, mountNode);
+
+    </script>
+
+    <script>
+
+        class Button extends React.Component {
+            handleClick = () => {
+                this.props.onClickFunction(this.props.incrementValue);
+            };
+
+            render() {
+                return (
+                    <button onClick={this.handleClick}>
+                        +{this.props.incrementValue}
+                    </button>
+                );
+            }
+        }
+
+        const Result = (props) => {
+            return (
+                <div>{props.counter}</div>
+            );
+        }
+
+        class App extends React.Component {
+            state = { counter: 0 };
+
+            incrementCounter = (incrementValue) => {
+                this.setState((prevState) => ({
+                    counter: prevState.counter + incrementValue
+                }));
+            };
+
+            render() {
+                return (
+                    <div>
+                        <Button incrementValue={1} onClickFunction={this.incrementCounter} />
+                        <Button incrementValue={5} onClickFunction={this.incrementCounter} />
+                        <Button incrementValue={10} onClickFunction={this.incrementCounter} />
+                        <Button incrementValue={100} onClickFunction={this.incrementCounter} />
+
+                        <Result counter={this.state.counter} />
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<App />, mountNode);
+
+    </script>
+
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+    <script></script>
+
+</body >
+</html >
