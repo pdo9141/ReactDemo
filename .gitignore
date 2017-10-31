@@ -3,3 +3,8 @@
 ################################################################################
 
 /ReactDemo/psadmin/Bin
+/ReactDemo/psadmin/Web.Debug.config
+/ReactDemo/psadmin/Web.config
+/ReactDemo/psadmin/packages.config
+/ReactDemo/packages
+/ReactDemo/psadmin/node_modules

@@ -65,4 +65,21 @@
 			Router.State,
 		],
 		...
-19) 
+19) React Router
+	Nested views map to nested routes, declarative, used at Facebook, inspired by Ember
+	Route: declaratively map a route
+	DefaultRoute: for URL of "/". Like "index.html".
+	NotFoundRoute: client side 404
+	Redirect: redirect to another route
+14) Hash vs History URLs
+	Hash location: yourUrl.com#/courses
+		Ugly URLs
+		Works in all browsers
+		Not compatible with server-render
+	History location: yourUrl.com/courses
+		Clean URLs
+		IE10+
+		Works with server-render
+15) Handling Transitiions
+	willTransitionTo: determine if page should be transitioned to
+	willTransitionFrom: runs checks before user navigates away
