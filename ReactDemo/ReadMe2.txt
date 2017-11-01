@@ -83,3 +83,5 @@
 15) Handling Transitiions
 	willTransitionTo: determine if page should be transitioned to
 	willTransitionFrom: runs checks before user navigates away
+16) Install toastr
+	npm install --save toastr@2.1.0
