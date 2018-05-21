@@ -11,3 +11,9 @@ Adding new repository
 02) Create new diretory, navigate to it and "git init"
 03) git remote add origin https://github.com/pdo9141/YOUR_REPO_NAME_CREATED_IN_GITHUB
 04) git push -u origin master
+
+Install default React App
+01) npm install -g create-react-app
+02) create-react-app my-app
+    create-react-app .
+03) In cmd, ".gitignore" to ignore node modules folder    
